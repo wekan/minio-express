@@ -1,15 +1,10 @@
-const Minio = require('minio');
+const Minio = require('@wekanteam/minio');
 const express = require('express');
 const app = express();
 const port = 7000;
 
 // Initialize a new Minio client
 const minioClient = new Minio.Client({
-/*
-  endPoint: 'your-minio-server-endpoint',
-  accessKey: 'your-access-key',
-  secretKey: 'your-secret-key'
-*/
   endPoint: process.env.ENDPOINT,
   key: process.env.KEY,
   secret: process.env.SECRET,
